@@ -1,0 +1,43 @@
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 4rem;
+    padding: 1rem 4rem;
+    gap: 3rem;
+}
+
+.mainHeader {
+    display: flex;
+    padding: 1rem 0;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.mainHeader li {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-weight: bold;
+}
+
+#title {
+    width: 20%;
+}
+
+#description {
+    width: 40%;
+}
+
+#status,
+#date {
+    width: 15%;
+}
+
+#edit,
+#delete {
+    width: 10%;
+}
