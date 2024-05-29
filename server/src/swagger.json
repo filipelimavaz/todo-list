@@ -1,0 +1,226 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Esta é uma API simples utilizando Node.js que permita realizar operações CRUD (Create, Read, Update, Delete) para gerenciar uma lista de tarefas (to-do list).",
+        "description": "Esta API suporta a criação de novas tarefas, listagem de todas as tarefas, atualização de uma tarefa existente e exclusão de uma tarefa.",
+        "termsOfService": "http://localhost:5000",
+        "contact": {
+            "email": "filipe.lvm@gmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:5000",
+            "description": "API de teste"
+        }
+    ],
+    "paths": {
+        "/todos": {
+            "post" : {
+                "summary": "Criação de tarefa (to-do)",
+                "description": "Essa rota será responsável por criar uma nova tarefa (to-do)",
+                "tags": ["Todos"],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Todo"
+                            },
+                            "examples": {
+                                "todo": {
+                                    "value": {
+                                        "title": "Lavar o carro",
+                                        "description": "Preciso lavar o carro hoje, pois não terei tempo esta semana",
+                                        "status": "in progress",
+                                        "creation_date": "2024-05-29"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "CREATED",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Todo"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Erro. O to-do não pôde ser criado."
+                    }
+                }
+            },
+            "get": {
+                "summary": "Lista todas as tarefas (to-do)",
+                "description": "Essa rota será responsável por listar todas as tarefas (to-do)",
+                "tags": ["Todos"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Todo"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Erro. Nenhuma tarefa (to-do) foi encontrada."
+                    }
+                }
+            }            
+        },
+        "/todos/{id}": {
+            "get": {
+                "summary": "Busca uma tarefa (to-do) pelo id",
+                "description": "Busca de uma tarefa (to-do) pelo id",
+                "tags": [ "Todos" ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do To-do para alteração",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Todo"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Erro. O to-do não foi encontrado."
+                    }
+                }
+            },
+            "put": {
+                "summary": "Alterar uma tarefa (to-do) pelo id",
+                "description": "Alterar de uma tarefa (to-do) pelo id",
+                "tags": [ "Todos" ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do To-do para alteração",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Todo"
+                            },
+                            "examples": {
+                                "todo": {
+                                    "value": {
+                                        "title": "Lavar a casa",
+                                        "description": "Preciso lavar a casa hoje, pois não terei tempo esta semana e receberei visitas no final de semana.",
+                                        "status": "pending",
+                                        "creation_date": "2024-05-29"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Todo"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Erro. O to-do não pôde ser criado."
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Apaga uma tarefa (to-do) pelo id",
+                "description": "Deleção de uma tarefa (to-do) pelo id",
+                "tags": [ "Todos" ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do To-do para deleção",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Todo"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Erro. O to-do não foi encontrado."
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Todo": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string",
+                        "enum": [ "completed", "in progress", "pending" ]
+                    },
+                    "creation_date": {
+                        "type": "date"
+                    }
+                }
+            }
+        }
+    }
+}

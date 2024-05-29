@@ -10,6 +10,7 @@ router.use(cors({
 
 router.get("/todos", TodoController.index);
 router.get("/todos/:id", TodoController.show);
+router.get("/terms", TodoController.terms)
 router.post("/todos", TodoController.store);
 router.put("/todos/:id", TodoController.update);
 router.delete("/todos/:id", TodoController.delete);
