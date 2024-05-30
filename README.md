@@ -2,14 +2,15 @@
 
   Esta é uma API simples utilizando Node.js e React.js que permite realizar operações CRUD (Create, Read, Update, Delete) para gerenciar uma lista de tarefas (to-do list). A API deve suporta a criação de novas tarefas, listagem de todas as tarefas, atualização de uma tarefa existente e exclusão de uma tarefa.
 
-## Índice
 *******
+## Índice
 - [Decisões técnicas 💻](#decisoes-tecnicas)
 - [Instruções para configurar o ambiente de desenvolvimento 👓](#instrucoes)
 - [Fluxo Detalhado 🔄](#fluxo-aplicacao)
 *******
 
 <div id='decisoes-tecnicas'></div>
+  
 ## Decisões técnicas 💻
 
   Abaixo estão as decisões técnicas realizadas no projeto
@@ -50,6 +51,7 @@
     Para os testes eu utilizei o Jest por conta da minha familiaridade com a ferramenta. Fiz a divisão de cada funcionalidade (create, getAll, getById, update e delete) em suas respectivas pastas, visando a organização.
 
 <div id='instrucoes'></div>
+  
 ## Instruções para configurar o ambiente de desenvolvimento 👓
 
   O que você vai precisar para rodar essa aplicação:
@@ -89,6 +91,8 @@
       ('Treino na academia', 'Ir à academia e fazer o treino de musculação.', 'completed', '2024-05-09'),
       ('Organizar escritório', 'Organizar e limpar o escritório em casa.', 'pending', '2024-05-10');
   ```
+
+<div id='fluxo-aplicacao'></div>
 
 ## Fluxo Detalhado 🔄
 
