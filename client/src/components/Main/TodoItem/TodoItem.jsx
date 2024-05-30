@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../../Button/Button';
 import styles from './todoItem.module.css';
 
 const formatDate = (dateString) => {
@@ -28,8 +29,8 @@ const TodoItem = ({ todo, onEdit, onDelete }) => {
       <div className={styles.description}>{description}</div>
       <div className={styles.status}>{formatStatus(status)}</div>
       <div className={styles.date}>{formatDate(creation_date)}</div>
-      <button className={`${styles.button} ${styles.editButton}`} onClick={() => onEdit(todo)}>Editar</button>
-      <button className={`${styles.button} ${styles.deleteButton}`} onClick={() => onDelete(todo)}>Deletar</button>
+      <Button className={styles.editButton} onClick={() => onEdit(todo)}>Editar</Button>
+      <Button className={styles.deleteButton} onClick={() => onDelete(todo)}>Deletar</Button>
     </div>
   );
 };

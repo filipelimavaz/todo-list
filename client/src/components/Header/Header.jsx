@@ -1,5 +1,6 @@
 import React from 'react'
-import css from './header.module.css'
+import styles from './header.module.css'
+import Button from '../Button/Button';
 
 const Header = ({ getSearch }) => {
 
@@ -9,13 +10,13 @@ const Header = ({ getSearch }) => {
     };
 
     return (
-        <nav className={css.header}>
-            <div className={css.div_header}>
-                <h1>Todo List</h1>
-                <div className={css.right_box}>
-                    <div className={css.div_search}>
-                        <input onChange={handleSearch} type="search" />
-                        <button onClick={handleSearch}>Search</button>
+        <nav className={styles.header}>
+            <div className={styles.divHeader}>
+                <h1>Lista de tarefas</h1>
+                <div className={styles.rightBox}>
+                    <div className={styles.divSearch}>
+                        <input onChange={handleSearch} type="search" placeholder="Buscar por título"/>
+                        <Button onClick={handleSearch}>Search</Button>
                     </div>
                 </div>
             </div>

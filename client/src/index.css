@@ -1,6 +1,41 @@
+:root {
+  --body--background-color: #E3EDFD;
+  --container-background-color: #4285F4;
+  --container-background-color-2: #4663AC;
+  --item-background-color: rgba(255, 255, 255, 0.8);
+  --field-backgroung-color: #eee;
+  --text-color-1: #111;
+  --text-color-2: #eee;
+  --error-color: #FF4848;
+  --border-color: #ccc;
+
+  --edit-container-background-color: rgba(0, 0, 0, 0.5);
+
+  --box-shadow-config: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+  /* BUTTONS COLORS */
+  --button-search-todo: #4285F4;
+  --button-create-todo: #3CB061;
+  --button-delete-todo: #F44336;
+  --button-edit-todo: #FF9800;
+  --button-edit-cancel-todo: #F44336;
+
+  /*BUTTONS HOVER COLORS */
+  --button-hover-search-todo: #293D70;
+  --button-hover-create-todo: #437D56;
+  --button-hover-delete-todo: #DA190B;
+  --button-hover-edit-todo: #C07300;
+  --button-hover-cancel-todo: #DA190B;
+}
+
 * {
   padding: 0;
   margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--body--background-color);
 }
 
 ul {

@@ -39,8 +39,17 @@ const Main = ({ getSearch }) => {
     }
   }, [getSearch, todos]);
 
-  const handleCreate = (newTodo) => {
-    setTodos(prevTodos => [...prevTodos, newTodo[0]]);
+  const handleCreate = async () => {
+    try {
+      const response = await fetch('http://localhost:5000/todos');
+      if (!response.ok) {
+        throw new Error('Erro ao buscar tarefas');
+      }
+      const data = await response.json();
+      setTodos(data);
+    } catch (error) {
+      console.error('Erro ao buscar tarefas:', error);
+    }
   };
 
   const handleEdit = (todo) => {
@@ -81,16 +90,16 @@ const Main = ({ getSearch }) => {
   return (
     <div className={styles.main}>
       <CreateTodo onCreate={handleCreate} />
-      <div>
-        <ul className={styles.mainHeader}>
-          <li id={styles.title}>Titulo</li>
-          <li id={styles.description}>Descrição</li>
-          <li id={styles.status}>Status</li>
-          <li id={styles.date}>Data de criação</li>
-          <li id={styles.edit}>Editar</li>
-          <li id={styles.delete}>Deletar</li>
-        </ul>
+      <div className={styles.todoContainer}>
         <div className={styles.todoList}>
+          <ul className={styles.mainHeader}>
+            <li id={styles.title}>Titulo</li>
+            <li id={styles.description}>Descrição</li>
+            <li id={styles.status}>Status</li>
+            <li id={styles.date}>Data</li>
+            <li id={styles.edit}>Editar</li>
+            <li id={styles.delete}>Deletar</li>
+          </ul>
           {filteredTodos.map(todo => (
             <TodoItem
               key={todo.id}
