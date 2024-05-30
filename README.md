@@ -112,7 +112,7 @@
 
 ## Instruções para executar o projeto 📓
 
-  Dadas as informações acima, para executar o projeto faça os seguintes passos no terminal:
+  Dadas as informações acima. Para executar o projeto, faça os seguintes passos no terminal dentro de suas respectivas pastas:
 
   1. Dentro da pasta **server** execute o comando **npm start**
   ```bash
