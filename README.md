@@ -6,6 +6,7 @@
 ## Índice
 - [Decisões técnicas 💻](#decisoes-tecnicas)
 - [Instruções para configurar o ambiente de desenvolvimento 👓](#instrucoes)
+- [Instruções para executar o projeto 📓](#executar)
 - [Fluxo Detalhado da aplicação 🔄](#fluxo-aplicacao)
 *******
 
@@ -58,6 +59,13 @@
   - Node JS ☑️
   - Postgresql ☑️
 
+  ### Node
+
+  Com o Node instalado na sua máquina, você precisa entrar na pasta **client** do projeto e digitar o comando **npm install** para instalar todas as dependências do front-end. No back-end não é necessário.
+  ```bash
+    npm install
+  ```
+
   ### Postegresql
 
   Com o Banco de Dados Postgresql você irá:
@@ -92,6 +100,37 @@
       ('Organizar escritório', 'Organizar e limpar o escritório em casa.', 'pending', '2024-05-10');
   ```
 
+  ### ⚠️Connection.js⚠️
+  
+  O usuário padrão para acessar o sistema é **postgres** e a senha padrão **root**. Caso a senha do seu postgresql não seja essa, ou você prefira fazer a alteração. Você pode entrar no arquivo **connection.js** e mudar o usuário e a senha.
+
+  <p align="center">
+    <img src="./assets/connectionjs-print.png" alt="connectionjs-screenshot"/>
+  </p>
+
+<div id='executar'></div>
+
+## Instruções para executar o projeto 📓
+
+  Dadas as informações acima, para executar o projeto faça os seguintes passos no terminal:
+
+  1. Dentro da pasta **server** execute o comando **npm start**
+  ```bash
+  npm start
+  ```
+  
+  2. Dentro da pasta **client** execute o comando **npm run dev**
+  ```bash
+  npm run dev
+  ```
+
+  3. Para rodar os testes, dentro da pasta **server**, execute o comando **npm test**
+  ```bash
+  npm test
+  ```
+
+  ⚠️O back-end estará alocado na porta 5000, enquanto o front-end na porta 5173⚠️
+
 <div id='fluxo-aplicacao'></div>
 
 ## Fluxo Detalhado da aplicação 🔄
@@ -99,7 +138,7 @@
   Abaixo você encontra um diagrama de fluxo da aplicação, juntamente com textos informativos.
 
   <p align="center">
-    <img src="./assets/data-flow-diagram.png" alt="DataFlow" width="500" />
+    <img src="./assets/data-flow-diagram.png" alt="data-flow" width="500" />
   </p>
 
 ### Requisição do Cliente:
