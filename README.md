@@ -6,7 +6,7 @@
 ## Índice
 - [Decisões técnicas 💻](#decisoes-tecnicas)
 - [Instruções para configurar o ambiente de desenvolvimento 👓](#instrucoes)
-- [Fluxo Detalhado 🔄](#fluxo-aplicacao)
+- [Fluxo Detalhado da aplicação 🔄](#fluxo-aplicacao)
 *******
 
 <div id='decisoes-tecnicas'></div>
@@ -94,7 +94,7 @@
 
 <div id='fluxo-aplicacao'></div>
 
-## Fluxo Detalhado 🔄
+## Fluxo Detalhado da aplicação 🔄
 
   Abaixo você encontra um diagrama de fluxo da aplicação, juntamente com textos informativos.
 
