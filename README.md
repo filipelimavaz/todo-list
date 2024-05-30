@@ -1,6 +1,6 @@
 # CRUD API - Gerenciador de Atividades (To-do List) 📝
 
-  Esta é uma API simples utilizando Node.js e React.js que permite realizar operações CRUD (Create, Read, Update, Delete) para gerenciar uma lista de tarefas (to-do list). A API deve suporta a criação de novas tarefas, listagem de todas as tarefas, atualização de uma tarefa existente e exclusão de uma tarefa.
+  Esta é uma API utilizando Node.js e React.js que permite realizar operações CRUD (Create, Read, Update, Delete) para gerenciar uma lista de tarefas (to-do list). A API deve suporta a criação de novas tarefas, listagem de todas as tarefas, atualização de uma tarefa existente e exclusão de uma tarefa.
 
 *******
 ## Índice
