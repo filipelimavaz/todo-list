@@ -1,10 +1,10 @@
 button {
     border: none;
-    padding: 10px;
+    padding: 0.7rem;
     border-radius: 5px;
     color: var(--text-color-2);
     font-weight: 500;
-    margin-top: 10px;
+    margin-top: 0.7rem;
     box-shadow: var(--box-shadow-config);
     transition: all 500ms ease;
     letter-spacing: 1px;
